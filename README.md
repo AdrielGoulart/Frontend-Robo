@@ -2,6 +2,10 @@
 - R.O.B.O. (Robô Operacional Binariamente Orientado)
 - This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.2.1.
 
+
+## Install the project dependencies
+Before run the project, run npm install on Visual Studio(project IDE) console, to install the dependencies.
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
