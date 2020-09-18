@@ -1,0 +1,99 @@
+
+<div class="card m-4">
+
+    <!--Mensagem de êxito na mudança de estado-->
+    <div *ngIf="sucesso && !erro" class="alert alert-success" role="alert">
+        {{mensagemBack}}
+    </div>
+
+    <!--Mensagem de erro na troca-->
+    <div *ngIf="erro && !sucesso" class="alert alert-danger" role="alert">
+        {{mensagemErroBack}}
+    </div>
+
+    <div class="card-footer">
+        <form>
+
+            <div class="form-row align-items-center">
+
+                <!--Braço Direito-->
+                <div class="col-md-4 mb-3">
+                    <div class="card">
+                        <h5>Braço Direito</h5>
+                        <img src="../../../assets/img/bracoDireito.jpg" alt="Person" class="card__image">
+                        <p>Cotovelo</p>
+                        <select (change)="mudaEstadoCotovelo($event, 'direito')" class="form-control form-control-sm"
+                            id="exampleFormControlSelect1">
+                            <option value="" selected disabled hidden>Selecione um novo estado</option>
+                            <option value={{i}} *ngFor="let item of listaEstadosCotovelo; let i = index">{{i + 1}} - {{item}}
+                            </option>
+                        </select>
+                        <p class="info">Pulso</p>
+                        <select (change)="mudaEstadoPulso($event, 'direito')" class="form-control form-control-sm"
+                            id="exampleFormControlSelect1">
+                            <option value="" selected disabled hidden>Selecione um novo estado</option>
+                            <option value={{i}} *ngFor="let item of listaEstadosPulso; let i = index">{{i + 1}} - {{item}}
+                            </option>
+                        </select>
+                        <br>
+
+                        <p><b>Estado atual Cotovelo: </b><span style="color: rgb(238, 0, 0);"> {{cotoveloDir}}</span> </p>
+                        <p><b>Estado atual Pulso: </b> <span style="color: rgb(238, 0, 0);"> {{pulsoDir}}</span></p>
+                    </div>
+                </div>
+
+                <!--Cabeça-->
+                <div class="col-md mb-3">
+                    <div class="card">
+                        <h5>Cabeça</h5>
+                        <img src="../../../assets/img/cabeca.jpg" alt="Person" class="card__image">
+                        <p>Rotação</p>
+                        <select (change)="mudaRotacaoCabeca($event)" class="form-control form-control-sm"
+                            id="exampleFormControlSelect1">
+                            <option value="" selected disabled hidden>Selecione um novo estado</option>
+                            <option value={{i}} *ngFor="let item of listaEstadosRotacao; let i = index">{{i + 1}} -
+                                {{item}}
+                            </option>
+                        </select>
+                        <p>Inclinação</p>
+                        <select (change)="mudaInclinacaoCabeca($event)" class="form-control form-control-sm"
+                            id="exampleFormControlSelect1">
+                            <option value="" selected disabled hidden>Selecione um novo estado</option>
+                            <option value={{i}} *ngFor="let item of listaEstadosInclinacao; let i = index">{{i + 1}} -
+                                {{item}}</option>
+                        </select><br>
+
+                        <p><b>Estado atual Rotação: </b> <span style="color: rgb(238, 0, 0);">{{rotacaoCabeca}} </span></p>
+                        <p><b>Estado atual Inclinação: </b> <span style="color: rgb(238, 0, 0);">{{inclinacaoCabeca}}</span></p>
+                    </div>
+                </div>
+
+                <!--Braço esquerdo-->
+                <div class="col-md-4 mb-3">
+                    <div class="card">
+                        <h5>Braço Esquerdo</h5>
+                        <img src="../../../assets/img/bracoEsquerdo.png" alt="Person" class="card__image">
+                        <p>Cotovelo</p>
+                        <select (change)="mudaEstadoCotovelo($event, 'esquerdo')" class="form-control form-control-sm"
+                            id="exampleFormControlSelect1">
+                            <option value="" selected disabled hidden>Selecione um novo estado</option>
+                            <option value={{i}} *ngFor="let item of listaEstadosCotovelo; let i = index">{{i + 1}} - {{item}}
+                            </option>
+                        </select>
+                        <p>Pulso</p>
+                        <select (change)="mudaEstadoPulso($event, 'esquerdo')" class="form-control form-control-sm"
+                            id="exampleFormControlSelect1">
+                            <option value="" selected disabled hidden>Selecione um novo estado</option>
+                            <option value={{i}} *ngFor="let item of listaEstadosPulso; let i = index">{{i + 1}} - {{item}}
+                            </option>
+                        </select>
+                        <br>
+                        <p><b>Estado atual Cotovelo: </b> <span style="color: rgb(238, 0, 0);">{{cotoveloEsq}}</span></p>
+                        <p><b>Estado atual Pulso: </b> <span style="color: rgb(238, 0, 0);">{{pulsoEsq}}</span></p>
+                    </div>
+                </div>
+            </div>
+        </form>
+
+    </div>
+</div>
